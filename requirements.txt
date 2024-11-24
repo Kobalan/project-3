@@ -4,3 +4,4 @@ plotly
 streamlit
 streamlit_option_menu
 itables
+openpyxl
