@@ -104,11 +104,10 @@ elif SELECT=='Explore Data':
 
     if Button1:
 
-        df1=pd.read_excel('Cleaned_Data.xlsx')
         components.html("""<html><body"><h3 style="font-family:Product sans; font-size:40px"> Hotel Details in Table View</h3></body></html>""",)
         html(
             to_html_datatable(
-                df1[['Name','Property_type','Room_type','Bed_type','Min_nights','Max_nights','Cancellation_policy','Accommodates','Bedrooms','Beds','Bathrooms','Cleaning_Fee','Extra_People','Guests_included','No._of_reviews','Review_Scores','Price']].loc[(df['country']==Country1)].reset_index(drop=True),
+                df[['name','property_type','room_type','bed_type','minimum_nights','maximum_nights','cancellation_policy','accommodates','bedrooms','beds','bathrooms','cleaning_fee','extra_people','guests_included','number_of_reviews','review_scores','price']].loc[(df['country']==Country1)].reset_index(drop=True),
                 maxBytes=0,
             ),
             height=660,
@@ -119,7 +118,7 @@ elif SELECT=='Explore Data':
 
         html(
             to_html_datatable(
-                df2[['Name','Host_name','Host_response_time','Host_neighbourhood','Host_response_rate','Host_identity_verified','Host_total_listings_count','Availability_30','Availability_60','Availability_90','Availability_365']].loc[(df['country']==Country1)].reset_index(drop=True),
+                df[['name','host_name','host_response_time','host_neighbourhood','host_response_rate','host_identity_verified','host_total_listings_count','availability_30','availability_60','availability_90','availability_365']].loc[(df['country']==Country1)].reset_index(drop=True),
                 maxBytes=0,
             ),
             height=660,
